@@ -9,24 +9,22 @@
     .box { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
     .notice { margin-top: 1.5rem; font-size: 0.9rem; color: #999; }
   </style>
-  <script type="module">
-    import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
-
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
       const url = new URL(window.location.href);
       const email = url.searchParams.get("email");
 
       if (email) {
-        emailjs.init("jFQnCcs58cfZbK0zu");  // Your Public Key
-
-        emailjs.send("service_hyw6uyh", "template_bqnd98c", {
-          email: email
+        fetch("https://script.google.com/macros/s/AKfycbwfFl7q86HbNDGbV-M3msyxqFBkFW1Q0LExXOkVcXH15QHPA7m6EDxaMRSzGshmGWn36g/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "email=" + encodeURIComponent(email)
         })
+        .then(res => res.text())
         .then(() => {
           document.querySelector(".notice").innerText = "✅ eBook sent successfully!";
         })
-        .catch((err) => {
-          console.error("EmailJS error:", err);
+        .catch(() => {
           document.querySelector(".notice").innerText = "❌ Payment succeeded but email failed. Contact support.";
         });
       } else {
@@ -39,7 +37,7 @@
   <div class="box">
     <h1>🎉 Thank You for Your Purchase!</h1>
     <p>Your eBook has been sent to your email address.</p>
-    <p>If you didn’t receive it, <b>contact sales@ransangroups.com</b></p>
+    <p>If you didn’t receive it, <b>contact sales@ransangroups.in</b></p>
     <div class="notice">Sending eBook...</div>
   </div>
 </body>
