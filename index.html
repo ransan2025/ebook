@@ -1,4 +1,4 @@
-<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +39,7 @@
         return;
       }
 
-      fetch("YOUR_CREATE_ORDER_SCRIPT_URL", {
+      fetch("https://script.google.com/macros/s/AKfycbzgb6aH-U15SRRxmnqKSyfX91qSGrskksb2ltgtg9aptCvB8c0lflyrLVWPTL83Sw_D4w/exec", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: "email=" + encodeURIComponent(email)
