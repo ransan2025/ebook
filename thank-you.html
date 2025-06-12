@@ -15,7 +15,7 @@
       const email = url.searchParams.get("email");
 
       if (email) {
-        fetch("https://script.google.com/macros/s/AKfycbwfFl7q86HbNDGbV-M3msyxqFBkFW1Q0LExXOkVcXH15QHPA7m6EDxaMRSzGshmGWn36g/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbzIcyqtB-3wy3vYOV1yQR0yUIVU5oLhTqDrOucsFXO2ebq9fufXa4Kok-wagyhQMAxpJQ/exec", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: "email=" + encodeURIComponent(email)
